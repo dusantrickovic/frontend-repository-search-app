@@ -1,0 +1,94 @@
+* {
+    color: white;
+}
+
+.repository-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.repo-details {
+    width: 50vw;
+    margin: 0 auto;
+    height: 70vh;
+    background-color: purple;
+    position: absolute;
+    border: 5px solid rgb(51, 4, 74);
+    
+}
+
+.repo-details > img {
+    position: relative;
+    bottom: 3em;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border: 10px solid rgb(51, 4, 74);
+    box-shadow: 2px 0px 10px black;
+}
+
+.repo-details > h1 {
+    max-width: fit-content;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-top: -1em;
+}
+
+.repo-data {
+    display:flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.contributors > ol {
+    width: fit-content;
+    background-color: transparent;
+}
+
+.contributors > h3 {
+    background-color: transparent;
+    width: fit-content;
+    margin-left: 1em;
+}
+
+ol > li > a {
+    background-color: transparent;
+}
+
+h4 {
+    background-color: transparent;
+}
+
+.repo-details > h4 {
+    margin-top: -2em;
+    margin-bottom: 2em;
+}
+
+.repo-data:first-of-type(h4) {
+    margin-left: -2em;
+}
+
+.numbers {
+    text-align: left;
+}
+
+.repo-data > div {
+    margin-left: 1em;
+    margin-right: 2em;
+}
+
+.languages > * {
+    background: transparent;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    width: fit-content;
+    padding: 1em;
+    border: 10px solid rgb(64, 6, 64);
+    position: relative;
+    bottom: 1em;
+}
