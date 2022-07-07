@@ -60,3 +60,22 @@
 div {
     background-color: transparent;
 }
+
+.page-nums {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.page-nums > ul {
+    display: flex;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.page-nums > ul > li {
+    flex-shrink: 1;
+    margin: 0 auto;
+    cursor: pointer;
+}

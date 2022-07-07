@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function RepList({framework,repos, setRepos, parentCallback, handleRepoPage}) {
   const [reps, setReps] = useState(repos);
+  const [pageNum, setPageNum] = useState(1);
 
   // Fetching the data and storing it into the copy of the repos object (I just found it easier to work with it when sorting by forks and stars, since it doesn't exactly ruin the previous repo object).
   const fetchData = x => {
@@ -12,17 +13,20 @@ function RepList({framework,repos, setRepos, parentCallback, handleRepoPage}) {
     .then(res => res.json())
     .then(data => {
       let finalData = data.items;
-      //setRepos(finalData);
       setReps(finalData);
       parentCallback(finalData);
-      console.log(repos)
+      //console.log(repos)
     });
   }
 
   // Fetching data on every framework tab change.
   useEffect(() => {
-    fetchData(`https://api.github.com/search/repositories?q=${framework}`);
+    fetchData(`https://api.github.com/search/repositories?q=${framework}&page=1`);
   }, [framework]);
+
+  useEffect(() => {
+    fetchData(`https://api.github.com/search/repositories?q=${framework}&page=${pageNum}`);
+  }, [pageNum])
 
 
   // Sending out an additional query to the API that will return results that are sorted based on forks and stars.
@@ -59,6 +63,14 @@ function RepList({framework,repos, setRepos, parentCallback, handleRepoPage}) {
                 </div> 
               </Link> )}
 
+          </div>
+
+          <div className='page-nums'>
+            <ul>
+              <li onClick={() => setPageNum(1)}>1</li>
+              <li onClick={() => setPageNum(2)}>2</li>
+              <li onClick={() => setPageNum(3)}>3</li>
+            </ul>
           </div>
         </div>
     </div>
